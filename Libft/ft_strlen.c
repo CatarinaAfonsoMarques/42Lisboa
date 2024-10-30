@@ -10,18 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(int c)
+#include <stdio.h>
+
+size_t	ft_strlen(const char *str)
 {
-    return (c > 32 && c < 126);
+    size_t i;
+
+    i = 0;
+    while (str[i] != '\0')
+        i++;
+    return (i);
 }
 
-/*#include <stdio.h>
+/*
 int	main(void)
 {
-    printf("c %d\n", ft_isprint('c'));
-    printf("2 %d\n", ft_isprint('2'));
-    printf("  %d\n", ft_isprint(' '));
-    printf(", %d\n", ft_isprint(','));
-    printf("V %d\n", ft_isprint('V'));
+    printf("cat %zu\n", ft_strlen("catarina"));
+    printf("nothing %zu\n", ft_strlen(""));
+    printf("space %zu\n", ft_strlen(" "));
+    printf(",&* %zu\n", ft_strlen(",&*"));
+    //printf("3 %zu\n", ft_strlen(3));
 }
 */
