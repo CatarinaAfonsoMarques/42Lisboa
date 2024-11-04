@@ -12,11 +12,15 @@
 
 #include <stdio.h>
 
+//returns size of src after copying it to dest
+
 size_t  ft_strlcpy(char *dest, const char *src, size_t size)
-{
+{ 
     size_t i;
 
     i = 0;
+    if (size <= 0)
+        return (0);
     while (size > 0 && src[i] != '\0' && i < size - 1)
     {
         dest[i] = src[i];
