@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caafonso <caafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:20:38 by caafonso          #+#    #+#             */
-/*   Updated: 2024/10/30 19:56:11 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/04 17:18:23 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 //returns size of src after copying it to dest
 
@@ -27,24 +28,16 @@ size_t  ft_strlcpy(char *dest, const char *src, size_t size)
         i++;
     }
     dest[i] = '\0';
-    i = ft_strlen(src);
-    return (i);
-}
-
-/*
-size_t	ft_strlen(const char *str)
-{
-    size_t i;
-
     i = 0;
-    while (str[i] != '\0')
+    while (src[i] != '\0')
         i++;
     return (i);
 }
-
+/*
 int main(void)
 {
     char dst[5] = "1234";
-    printf("%zu\n", ft_strlcpy(dst, "ola", 3));
+    printf("%zu\n", ft_strlcpy(dst, 0, 3));
+    printf("%zu\n", strlcpy(dst, 0, 3));
 }
 */
