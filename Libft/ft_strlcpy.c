@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:20:38 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/04 17:18:23 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:22:50 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ int main(void)
 {
     char dst[5] = "1234";
     printf("%zu\n", ft_strlcpy(dst, 0, 3));
-    printf("%zu\n", strlcpy(dst, 0, 3));
+    printf("%d\n", strlcpy(dst, 0, 3));
 }
 */

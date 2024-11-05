@@ -6,36 +6,66 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:46:51 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/04 19:29:24 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:54:15 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <limits.h>
+#include <stdlib.h>
 
-int atoi(const char *nptr)
+int ft_atoi(const char *nptr)
 {
-	int	i;
+	int	neg;
 	int	rs;
+	int	i;
 
-	i = 1;
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\v' /
-	|| *nptr == '\f' || *nptr == '\r')
-		nptr++;
-	if (*nptr == '-')
+	neg = 1;
+	rs = 0;
+	i = 0;
+	if (!nptr)
+		return (0);
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		i = -1;
-		nptr++;
+		if (nptr[i] == '-')
+			neg = neg * -1;
+		i++;
 	}
-	while (*nptr != '\0')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		rs = rs * 10 + *nptr;
-		nptr++;
+		rs = rs * 10 + nptr[i] - 48;
+		i++;
 	}
-	return (rs * i);
+	return (rs * neg);
 }
-
+/*
 int	main(void)
 {
-	
+	printf("%d ", ft_atoi(" 	142"));
+	printf("%d\n", atoi(" 	142"));
+	printf("%d ", ft_atoi(" 	-142"));
+	printf("%d\n", atoi(" 	-142"));
+	printf("%d ", ft_atoi(" 	+-142"));
+	printf("%d\n", atoi(" 	+-142"));
+	printf("%d ", ft_atoi(" -+142"));
+	printf("%d\n", atoi(" -+142"));
+	printf("%d ", ft_atoi(" 	+142"));
+	printf("%d\n", atoi(" 	+142"));
+	printf("%d ", ft_atoi(" 33	142"));
+	printf("%d\n", atoi(" 33	142"));
+	printf("%d ", ft_atoi(" 33	-142"));
+	printf("%d\n", atoi(" 33	-142"));
+	printf("%d ", ft_atoi(" 	14 2"));
+	printf("%d\n", atoi(" 	14 2"));
+	printf("%d ", ft_atoi(" 	.142"));
+	printf("%d\n", atoi(" 	.142"));
+	printf("%d ", ft_atoi(" 	-14.2"));
+	printf("%d\n", atoi(" 	-14.2"));
+	printf("%d ", ft_atoi(" 	142"));
+	printf("%d\n", atoi(" 	142"));
+	printf("%d ", ft_atoi(""));
+	printf("%d\n", atoi(""));
 }
+*/
