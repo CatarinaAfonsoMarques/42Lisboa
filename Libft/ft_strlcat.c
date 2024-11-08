@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: caafonso <caafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 17:07:24 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/04 18:38:02 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:05:30 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 int main(void)
 {
-    printf("%zu ", ft_strlcat("1234", "5678", 10));
-    //printf("%d\n", strlcat("1234", "5678", 10));
-    printf("%zu ", ft_strlcat("1234", "5678", 0));
-    //printf("%d\n", strlcat("1234", "5678", 0));
-    printf("%zu ", ft_strlcat("", "", 0));
-    //printf("%d\n", strlcat("", "", 0));
+	printf("%zu ", ft_strlcat("1234", "5678", 10));
+	//printf("%d\n", strlcat("1234", "5678", 10));
+	printf("%zu ", ft_strlcat("1234", "5678", 0));
+	//printf("%d\n", strlcat("1234", "5678", 0));
+	printf("%zu ", ft_strlcat("", "", 0));
+		//printf("%d\n", strlcat("", "", 0));
 }

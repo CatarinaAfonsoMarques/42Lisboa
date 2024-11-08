@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:46:51 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/05 16:54:15 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/08 16:46:36 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,4 @@ int	main(void)
 	printf("%d\n", atoi(" 	142"));
 	printf("%d ", ft_atoi(""));
 	printf("%d\n", atoi(""));
-}
-*/
+}*/

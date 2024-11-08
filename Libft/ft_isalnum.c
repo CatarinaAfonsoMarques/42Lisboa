@@ -6,13 +6,13 @@
 /*   By: caafonso <caafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:21:08 by caafonso          #+#    #+#             */
-/*   Updated: 2024/10/30 14:16:54 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:05:30 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-    return ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z') || (c > '0' && c < '9'));
+	return ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z') || (c > '0' && c < '9'));
 }
 
 /*#include <stdio.h>
