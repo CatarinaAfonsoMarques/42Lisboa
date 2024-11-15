@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 16:47:44 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/15 15:47:33 by caafonso         ###   ########.fr       */
+/*   Created: 2024/11/15 17:37:26 by caafonso          #+#    #+#             */
+/*   Updated: 2024/11/15 17:45:08 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void *ft_memset(void *s, int c, size_t n)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	unsigned char	*ss;
-
-	ss = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		ss[i] = (unsigned char)c;
-		i++;
-	}
-	return (s);
+	
 }
-/*
+
 int main(void) 
 {
-	char buffer[20] = "Hello, World!";
-	size_t n = 5;
+	char destino[20] = "Hello, World!";
+	const char source[10] = "hey hey";
+	
+	size_t n = 7;
 
-	printf("Before ft_memset: %s\n", buffer);
-	ft_memset(buffer, '*', n);
-	printf("After ft_memset: %s\n", buffer);
+	printf("Before ft_memcpy: %s\n", destino);
+	ft_memcpy(destino, source, n);
+	printf("After ft_memcpy: %s\n", destino);
 }
-*/

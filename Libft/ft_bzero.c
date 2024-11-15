@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 16:47:44 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/15 15:47:33 by caafonso         ###   ########.fr       */
+/*   Created: 2024/11/15 15:47:57 by caafonso          #+#    #+#             */
+/*   Updated: 2024/11/15 16:46:13 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void *ft_memset(void *s, int c, size_t n)
+void ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	unsigned char	*ss;
+	char	*ss;
 
-	ss = (unsigned char *)s;
+	ss = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		ss[i] = (unsigned char)c;
+		ss[i] = 0;
 		i++;
 	}
-	return (s);
 }
 /*
 int main(void) 
@@ -32,8 +31,8 @@ int main(void)
 	char buffer[20] = "Hello, World!";
 	size_t n = 5;
 
-	printf("Before ft_memset: %s\n", buffer);
-	ft_memset(buffer, '*', n);
-	printf("After ft_memset: %s\n", buffer);
+	printf("Before ft_bzero: %s\n", buffer);
+	ft_bzero(buffer, n);
+	printf("After ft_bzero: %s\n", buffer);
 }
 */
