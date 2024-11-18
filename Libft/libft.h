@@ -5,6 +5,6 @@
 #include <stdlib.h>
 #include <limits.h>
 
-size_t ft_strlen(int);
+size_t ft_strlen(const char *str);
 
 #endif
