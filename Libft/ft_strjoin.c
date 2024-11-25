@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 19:34:23 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/25 19:57:26 by caafonso         ###   ########.fr       */
+/*   Created: 2024/11/18 20:16:33 by caafonso          #+#    #+#             */
+/*   Updated: 2024/11/18 21:38:57 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "libft.h"
 
-char *ft_substr(const char *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	char	*result;
+	int	i;
+	char *result;
 
-	if (!s || len + start > ft_strlen(s))
-		return (NULL);
-	if (start > ft_strlen(s))
-		return ();
-	result = ft_calloc(len + 1, sizeof(char));
+	result = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!result)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < ft_strlen(s1))
 	{
-		result[i] = s[i + start];
+		result [i] = s1[i];
 		i++;
 	}
+	while (i < ft_strlen(s1) + ft_strlen(s2))
+	{
+		result [i] = s2[i - ft_strlen(s1) - 1];
+		i++;
+	}
+	result[i] = '\0';
 	return (result);
 }
