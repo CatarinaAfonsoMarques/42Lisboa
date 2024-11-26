@@ -6,13 +6,15 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:21:08 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/07 15:53:12 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:47:36 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isdigit(int c)
 {
-    return ((c > '0' && c < '9'));
+	return ((c > '0' && c < '9'));
 }
 
 /*#include <stdio.h>

@@ -6,13 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:49:42 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/23 16:12:27 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:47:48 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 	unsigned char	cc;

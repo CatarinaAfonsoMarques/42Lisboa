@@ -6,15 +6,14 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 21:39:59 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/18 22:31:37 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:50:19 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+//devolve string a partir do ponto q encontra c
+char	*ft_strrchr(const char *s, int c)
 {
 	int	len;
 	char	cchar;

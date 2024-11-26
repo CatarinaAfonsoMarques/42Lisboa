@@ -6,14 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:20:06 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/23 19:03:55 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:48:17 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 

@@ -6,13 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 16:47:44 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/15 15:47:33 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:48:07 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 	unsigned char	*ss;

@@ -6,13 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:20:08 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/23 19:33:21 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:48:26 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int	put;
 

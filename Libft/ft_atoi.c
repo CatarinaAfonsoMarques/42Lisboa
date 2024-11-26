@@ -6,13 +6,11 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:46:51 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/08 16:46:36 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:34:52 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int ft_atoi(const char *nptr)
 {

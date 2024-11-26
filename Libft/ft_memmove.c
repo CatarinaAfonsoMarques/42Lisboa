@@ -6,13 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:37:26 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/18 20:27:57 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:48:02 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 	unsigned char	*temp_dst;

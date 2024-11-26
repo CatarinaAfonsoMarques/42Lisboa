@@ -6,12 +6,10 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:49:35 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/23 17:57:50 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:32:38 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *src)

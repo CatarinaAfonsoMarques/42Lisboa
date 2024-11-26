@@ -6,13 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:51 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/15 17:37:16 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:47:58 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 	unsigned char	*temp_dst;

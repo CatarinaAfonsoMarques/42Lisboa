@@ -6,14 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:12:54 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/18 22:13:05 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:50:55 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 	char	cchar;

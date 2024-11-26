@@ -3,35 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caafonso <caafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:20:38 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/07 16:05:30 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:49:35 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 //returns size of src after copying it to dest
 
-size_t  ft_strlcpy(char *dest, const char *src, size_t size)
-{ 
-    size_t i;
-
-    i = 0;
-    if (size <= 0)
-        return (0);
-    while (size > 0 && src[i] != '\0' && i < size - 1)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0';
-    i = 0;
-    while (src[i] != '\0')
-        i++;
-    return (i);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t i;
+	i = 0;
+	if (size <= 0)
+		return (0);
+	while (size > 0 && src[i] != '\0' && i < size - 1)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	i = 0;
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
 /*
 int main(void)
