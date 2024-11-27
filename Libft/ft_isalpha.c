@@ -6,11 +6,13 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:21:08 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:37:15 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:33:03 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_isalpha(int c);
 
 int	ft_isalpha(int c)
 {

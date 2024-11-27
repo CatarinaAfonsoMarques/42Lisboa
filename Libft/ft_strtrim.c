@@ -6,13 +6,15 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:16:33 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 17:06:50 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/27 17:17:51 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 //elimina inicio e fim q tenham letras do set
+//enquanto caracter de s1 pertencer ao set incrementa/descrementa
+//encontra sub string de acordo com start encontrado, len = end-start+1
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
@@ -26,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && ft_strchr(set, s1[end]))
 		end--;
-	return (ft_substr(s1, start, end - start));
+	return (ft_substr(s1, start, end - start + 1));
 }
 
 int	main(void)
