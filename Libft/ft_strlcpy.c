@@ -6,30 +6,30 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:20:38 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:49:35 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 20:43:47 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//returns size of src after copying it to dest
-
+//returns size of original src after copying it to dest
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
+	size_t	src_len;
+
 	i = 0;
-	if (size <= 0)
-		return (0);
-	while (size > 0 && src[i] != '\0' && i < size - 1)
+	src_len = ft_strlen(src);
+	if (size > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	dest[i] = '\0';
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	return (src_len);
 }
 /*
 int main(void)

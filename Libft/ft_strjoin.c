@@ -6,17 +6,17 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:16:33 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 15:02:26 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:14:30 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 //concatenates s1 and s2
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	char *result;
+	char	*result;
 
 	result = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!result)

@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 16:47:44 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:48:07 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:07:39 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*ss;
 
 	ss = (unsigned char *)s;

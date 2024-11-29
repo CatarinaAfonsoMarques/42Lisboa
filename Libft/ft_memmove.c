@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:37:26 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:48:02 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:24:13 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*temp_dst;
 	unsigned char	*temp_src;
 
@@ -23,20 +23,23 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	temp_dst = (unsigned char *)dst;
 	temp_src = (unsigned char *)src;
 	i = 0;
-	if (temp_dst > temp_src )
+	if (temp_dst > temp_src)
 	{
 		while (len-- > 0)
 			temp_dst[len] = temp_src[len];
 	}
 	else
 	{
-		while (i++ < len)
+		while (i < len)
+		{
 			temp_dst[i] = temp_src[i];
+			i++;
+		}
 	}
 	return (dst);
 }
 
-int main(void) 
+/* int main(void) 
 {
 	char	destino[20] = "Hello, World!";
 	const char source[10] = "hey hey";
@@ -46,4 +49,4 @@ int main(void)
 	printf("Before ft_memcpy: %s\n", destino);
 	ft_memcpy(destino, source, n);
 	printf("After ft_memcpy: %s\n", destino);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:21:08 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:47:42 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 18:56:11 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	return (c > 32 && c < 126);
+	return (c >= 32 && c <= 126);
 }
 
 /*#include <stdio.h>

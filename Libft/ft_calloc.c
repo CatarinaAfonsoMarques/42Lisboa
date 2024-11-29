@@ -6,16 +6,16 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:49:38 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:36:49 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:20:05 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char *ptr;
-	size_t	i;
+	unsigned char	*ptr;
+	size_t			i;
 
 	ptr = malloc(count * size);
 	if (!ptr)
@@ -26,7 +26,7 @@ void *ft_calloc(size_t count, size_t size)
 		ptr[i] = 0;
 		i++;
 	}
-	return(ptr);
+	return (ptr);
 }
 /*
 int main(void)

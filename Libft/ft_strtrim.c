@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:16:33 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/27 17:17:51 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:13:48 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr(s1, start, end - start + 1));
 }
 
-int	main(void)
+/* int	main(void)
 {
 	
-}
+} */

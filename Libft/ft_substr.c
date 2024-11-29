@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 19:34:23 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:46:59 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:13:11 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	if(ft_strlen(s) - start < len)
+	if (ft_strlen(s) - start < len)
 		len = ft_strlen(s) - start;
 	result = ft_calloc(len + 1, sizeof(char));
 	if (!result)

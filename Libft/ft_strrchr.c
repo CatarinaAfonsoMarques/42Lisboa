@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 21:39:59 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/27 18:49:45 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:23:30 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //devolve string a partir da ultima ocurrencia de c
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	int		len;
 	char	cchar;
 
 	cchar = (char) c;

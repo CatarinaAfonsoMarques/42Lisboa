@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:49:35 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:32:38 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:16:41 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *src)
 {
-	int	i;
+	int		i;
 	char	*dest;
 
 	dest = malloc(ft_strlen(src) + 1);

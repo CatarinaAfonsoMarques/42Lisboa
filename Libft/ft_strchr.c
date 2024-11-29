@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:12:54 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/27 18:49:21 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:23:15 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //retorna string a partir do ponto q encontra c
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	cchar;
 
 	cchar = (char) c;

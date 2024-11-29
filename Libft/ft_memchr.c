@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:49:42 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:47:48 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:20:52 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	cc;
 	unsigned char	*ss;
 

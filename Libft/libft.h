@@ -6,18 +6,18 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:41:26 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/26 14:46:45 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/11/29 19:25:56 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
-#include <strings.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+# include <strings.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
