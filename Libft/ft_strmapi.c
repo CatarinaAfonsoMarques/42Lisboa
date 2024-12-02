@@ -3,11 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: caafonso <caafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:05:26 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/29 19:12:16 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/12/02 02:59:30 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	return ();
+}

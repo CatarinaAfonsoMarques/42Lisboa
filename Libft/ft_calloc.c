@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: caafonso <caafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 14:49:38 by caafonso          #+#    #+#             */
-/*   Updated: 2024/11/29 19:20:05 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/12/01 15:58:46 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	unsigned char	*ptr;
 	size_t			i;
 
+	if (count == 0 || size == 0)
+		return (malloc(0));
 	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
