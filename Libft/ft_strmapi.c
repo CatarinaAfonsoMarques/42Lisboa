@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:05:26 by caafonso          #+#    #+#             */
-/*   Updated: 2024/12/03 15:45:48 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/12/03 19:40:02 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*result;
 
-	result = calloc(ft_strlen(s) + 1, sizeof (char));
+	result = ft_calloc(ft_strlen(s) + 1, sizeof (char));
 	if (!result)
 		return (NULL);
 	i = 0;
