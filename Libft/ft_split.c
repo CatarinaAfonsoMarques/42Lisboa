@@ -6,62 +6,70 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:05:31 by caafonso          #+#    #+#             */
-/*   Updated: 2024/12/03 19:24:20 by caafonso         ###   ########.fr       */
+/*   Updated: 2024/12/05 19:33:11 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" //usar malloc e free :')
 
-int		ft_countwords(const char *s, char c);
-void	*ft_eren_yeager(char **result, int count);
+static int	ft_skip_del(const char *s, char c, int index);
+static int	ft_banana(const char *s, char **res, char c, int i);
+static int	ft_countwords(const char *s, char c);
+static void	*ft_eren_yeager(char **result, int count);
 
 char	**ft_split(const char *s, char c)
 {
-	char	**result;
+	char	**res;
 	int		count;
-	int		start;
 	int		i;
 	int		j;
 
 	if (!s)
 		return (NULL);
 	count = ft_countwords(s, c);
-	result = ft_calloc(count + 1, sizeof(char *));
-	if (!result)
+	res = ft_calloc(count + 1, sizeof(char *));
+	if (!res)
 		return (NULL);
-	start = 0;
 	i = 0;
 	j = 0;
 	while (count > 0 && s[i] != '\0')
 	{
-		while (s[i] == c && s[i] != '\0')
-		{
-			i++;
-			start++;
-		}
-		while (s[i] != c && s[i] != '\0')
-		{
-			if ((s[i + 1] == c || s[i + 1] == 0) && j < count)
-			{
-				result[j] = ft_substr(s, start, i - start + 1);
-				if (result[j] == NULL)
-					return (ft_eren_yeager(result, count));
-				j++;
-				start = i + 1;
-			}
-			i++;
-		}
+		i = ft_skip_del(s, c, i);
+		i = ft_banana(s, &res[j], c, i);
+		if (i == 0)
+			return (ft_eren_yeager(res, count));
+		j++;
 	}
-	return (result);
+	return (res);
 }
 
-/* char	**ft_hell(const char *s, char **result, char c, int count)
+static int	ft_banana(const char *s, char **res, char c, int i)
 {
+	int	start;
 
+	start = i;
+	while (s[i] != c && s[i] != '\0')
+	{
+		if ((s[i + 1] == c || s[i + 1] == 0))
+		{
+			*res = ft_substr(s, start, i - start + 1);
+			if (*res == NULL)
+				return (0);
+			start = i + 1;
+		}
+		i++;
+	}
+	return (i);
+}
 
-} */
+static int	ft_skip_del(const char *s, char c, int i)
+{
+	while (s[i] == c && s[i] != '\0')
+		i++;
+	return (i);
+}
 
-int	ft_countwords(const char *s, char c)
+static int	ft_countwords(const char *s, char c)
 {
 	int	count;
 	int	i;
@@ -82,7 +90,7 @@ int	ft_countwords(const char *s, char c)
 	return (count);
 }
 
-void	*ft_eren_yeager(char **result, int count)
+static void	*ft_eren_yeager(char **result, int count)
 {
 	int	i;
 
