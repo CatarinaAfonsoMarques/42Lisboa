@@ -3,14 +3,14 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-SRC = ft_printf.c \
+SRC = ft_printf.c ft_format.c ft_putchar.c ft_putnbr_base.c ft_putstr.c\
 
 OBJECTS =  $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@echo "Compiling Libft"
+	@echo "Compiling LibftPrintf"
 	@ar rcs $(NAME) $(OBJECTS)
 	@echo "Done!"
 
