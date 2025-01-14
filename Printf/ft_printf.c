@@ -25,14 +25,13 @@ int	ft_printf(const char *format, ...)
 	va_start(list, format);
 	while (*format)
 	{
-		if (format == %)
+		if (format[i] == %)
 		{
-			ft_format();
+			ft_format(format[i + 1], list);
+			i++;
 		}
 		else
-		{
-			
-		}
+			i++;
 	}
 	va_end(list);
 	return (0);

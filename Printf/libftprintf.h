@@ -21,5 +21,10 @@
 # include <stdarg.h>
 
 //PROTOTIPAGENS
+int		ft_printf(const char *format, ...);
+void	*ft_format(char coisa, char *resto);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	ft_putnbr_base(int nbr, char *base);
 
 #endif
