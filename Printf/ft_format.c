@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 19:47:28 by caafonso          #+#    #+#             */
-/*   Updated: 2024/12/20 19:58:18 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/17 18:37:21 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 c Prints a single character.											👍
 s Prints a string (as defined by the common C convention).				👍
-p The void * pointer argument has to be printed in hexadecimal format.	👍
+p The void * pointer argument has to be printed in hexadecimal format.	
 d Prints a decimal (base 10) number.									👍
 i Prints an integer in base 10.											👍
 u Prints an unsigned decimal (base 10) number.							👍
@@ -24,16 +24,22 @@ X Prints a number in hexadecimal (base 16) uppercase format.			👍
 % Prints a percent sign.												👍
 */
 
-void	*ft_format(char coisa, char *resto)// meto ... ou meto lista ou meto oq?
+void	ft_format(char wtv, va_list resto)
 {
-	if (coisa == '%')
+	if (wtv == '%')
 		write (1, '%', 1);
-	if (coisa == 'c')
-		ft_putchar(resto);
-	if (coisa == 'd' || coisa == 'i' || coisa == 'u')
-		ft_putnbr_base(resto, dec);
-	if (coisa == 's')
-		ft_putstr(resto);
-	if (coisa == 'p' || coisa == 'x' || coisa == 'X')
-		ft_putnbr_base(resto, hexa);
+	if (wtv == 'c')
+		ft_putchar(va_arg(resto, char));
+	if (wtv == 'd' || wtv == 'i')
+		ft_putnbr_base(va_arg(resto, long), "0123456789");
+	if (wtv == 'u')
+		ft_putnbr_base(va_arg(resto, unsigned int), "0123456789");
+	if (wtv == 's')
+		ft_putstr(va_arg(resto, char *));
+	if (wtv == 'X')
+		ft_putnbr_base(va_arg(resto, long), HEXAUPPER);
+	if (wtv == 'x')
+		ft_putnbr_base(va_arg(resto, long), HEXALOWER);
+	if (wtv == 'p')
+		ft_pointer(va_arg(resto, hex));// ler como hexa
 }

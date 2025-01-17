@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 19:45:04 by caafonso          #+#    #+#             */
-/*   Updated: 2025/01/17 16:25:27 by caafonso         ###   ########.fr       */
+/*   Created: 2025/01/17 18:25:22 by caafonso          #+#    #+#             */
+/*   Updated: 2025/01/17 18:27:39 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putstr(char *str)
+int	ft_pointer()
 {
 	int	i;
 
-	if (!str)
-		return (ft_putstr("(null)"));
 	i = 0;
-	while (str[i] != '\0')
-	{
-		write (1, &str[i], 1);
-		i++;
-	}
+	write(1, "0x", 2);
+	//resto do endereco
 	return (i);
 }
