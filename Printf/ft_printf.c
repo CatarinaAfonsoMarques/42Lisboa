@@ -31,7 +31,8 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
-			i++;
+			write(1, &format[i], 1);
+			i++;//preciso de andar com a list?
 	}
 	va_end(list);
 	return (0);

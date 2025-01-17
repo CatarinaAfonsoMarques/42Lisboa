@@ -24,7 +24,7 @@ X Prints a number in hexadecimal (base 16) uppercase format.			👍
 % Prints a percent sign.												👍
 */
 
-void	*ft_format(char coisa, char *resto)
+void	*ft_format(char coisa, char *resto)// meto ... ou meto lista ou meto oq?
 {
 	if (coisa == '%')
 		write (1, '%', 1);

@@ -12,7 +12,8 @@
 
 #include "libftprintf.h"
 
-void	putchar(char c)
+int	putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

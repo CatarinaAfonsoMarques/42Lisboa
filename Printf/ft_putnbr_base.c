@@ -12,7 +12,18 @@
 
 #include "libftprintf.h"
 
-void	ft_putnbr_base(int nbr, char *base)
+int	ft_putnbr_base(long nbr, char *base, )
 {
-	
+	int	count;
+
+	count = 0;
+	if (base == dec)
+	{
+
+	}
+	if (base == 'hexa')
+	{
+
+	}
+	return count;
 }
