@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 19:44:57 by caafonso          #+#    #+#             */
-/*   Updated: 2025/01/17 18:45:11 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:31:58 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	ft_putnbr_base(long nbr, char *base)
 	write(1, &base[put], 1);
 	return (count);
 }
+
 /*
 #include <stdio.h>
 int	main(void)

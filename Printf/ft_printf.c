@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:35:59 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/17 18:29:25 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:04:03 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,25 @@ return nbr of char written
 
 int	ft_printf(const char *format, ...)
 {
-	va_list list;
-	int	i;
-	int	count;
+	va_list	list;
+	int		i;
+	int		count;
 
 	va_start(list, format);
 	i = 0;
+	count = 0;
 	while (*format)
 	{
 		if (format[i] == '%')
 		{
-			ft_format(format[i + 1], list);
+			count = ft_format(format[i + 1], list, count);
 			i = i + 2;
 		}
 		else
 		{
 			write(1, &format[i], 1);
 			i++;
+			count++;
 		}
 	}
 	va_end(list);
