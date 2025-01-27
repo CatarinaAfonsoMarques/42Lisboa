@@ -6,11 +6,11 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 19:47:28 by caafonso          #+#    #+#             */
-/*   Updated: 2025/01/27 16:05:18 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/27 19:39:22 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 /*
 c Prints a single character.	👍
@@ -31,19 +31,19 @@ int	ft_format(char wtv, va_list list, int count)
 		write (1, "%", 1);
 		count++;
 	}
-	if (wtv == 'c')
-		count = count + ft_putchar(va_arg(list, int));
-	if (wtv == 'd' || wtv == 'i')
-		count = count + ft_putnbr_base(va_arg(list, long), "0123456789");
-	if (wtv == 'u')
-		count = count + ft_putnbr_base(va_arg(list, unsigned int), "0123456789");
-	if (wtv == 's')
-		count = count + ft_putstr(va_arg(list, char *));
-	if (wtv == 'X')
-		count = count + ft_putnbr_base(va_arg(list, long), HEXAUPPER);
-	if (wtv == 'x')
-		count = count + ft_putnbr_base(va_arg(list, long), HEXALOWER);
-	// if (wtv == 'p')
-	// 	count = count + ft_pointer(va_arg(list, hex));
+	else if (wtv == 'c')
+		count += ft_putchar(va_arg(list, int));
+	else if (wtv == 'd' || wtv == 'i')
+		count += ft_putnbr_base(va_arg(list, int), BASEDEC);
+	else if (wtv == 'u')
+		count += ft_putnbr_base(va_arg(list, unsigned int), BASEDEC);
+	else if (wtv == 's')
+		count += ft_putstr(va_arg(list, char *));
+	else if (wtv == 'X')
+		count += ft_putnbr_base(va_arg(list, unsigned int), HEXAUPPER);
+	else if (wtv == 'x')
+		count += ft_putnbr_base(va_arg(list, unsigned int), HEXALOWER);
+	else if (wtv == 'p')
+		count += ft_pointer(va_arg(list, unsigned long));
 	return (count);
 }

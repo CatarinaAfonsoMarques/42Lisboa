@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:35:59 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/27 16:04:03 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/27 18:47:30 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ end
 return nbr of char written
 */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -30,9 +30,9 @@ int	ft_printf(const char *format, ...)
 	va_start(list, format);
 	i = 0;
 	count = 0;
-	while (*format)
+	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			count = ft_format(format[i + 1], list, count);
 			i = i + 2;

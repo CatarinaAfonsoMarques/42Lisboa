@@ -6,11 +6,11 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 19:45:04 by caafonso          #+#    #+#             */
-/*   Updated: 2025/01/27 15:31:54 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:11:01 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {
