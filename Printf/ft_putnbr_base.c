@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 19:44:57 by caafonso          #+#    #+#             */
-/*   Updated: 2025/01/27 19:35:48 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:42:31 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	ft_putnbr_base(long nbr, char *base)
 	count++;
 	return (count);
 }
-
 
 /*
 int	main(void)

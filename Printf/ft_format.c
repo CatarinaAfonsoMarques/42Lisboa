@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 19:47:28 by caafonso          #+#    #+#             */
-/*   Updated: 2025/01/27 19:39:22 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:06:33 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ int	ft_format(char wtv, va_list list, int count)
 	else if (wtv == 'x')
 		count += ft_putnbr_base(va_arg(list, unsigned int), HEXALOWER);
 	else if (wtv == 'p')
-		count += ft_pointer(va_arg(list, unsigned long));
+		count += ft_pointer(va_arg(list, unsigned long), 1);
 	return (count);
 }
