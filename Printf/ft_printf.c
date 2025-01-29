@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:35:59 by marvin            #+#    #+#             */
-/*   Updated: 2025/01/27 18:47:30 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:03:26 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	int		count;
 
+	if (!format)
+		return (0);
 	va_start(list, format);
 	i = 0;
 	count = 0;
