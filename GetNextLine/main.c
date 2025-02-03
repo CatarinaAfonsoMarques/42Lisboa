@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 20:08:23 by caafonso          #+#    #+#             */
-/*   Updated: 2025/02/03 18:27:08 by caafonso         ###   ########.fr       */
+/*   Created: 2025/02/03 18:25:36 by caafonso          #+#    #+#             */
+/*   Updated: 2025/02/03 18:47:52 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "get_next_line.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-//PROTOTIPAGENS
-char *get_next_line(int fd);
-
-
-#endif
+int	main(void)
+{
+	while ()
+	{
+		ft_printf("%s", get_next_line(1));
+		
+	}
+	return (0);
+}
