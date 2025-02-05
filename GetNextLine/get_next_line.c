@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:46:36 by caafonso          #+#    #+#             */
-/*   Updated: 2025/02/03 18:41:33 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:10:44 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ cc -Wall -Wextra -Werror -D BUFFER_SIZE=42
 
 undefined behavior: if the file pointed to by the file descriptor changed
 since the last call whereas read() didn’t reach the end of file; binary file
+
 
 */
 #include "get_next_line.h"
