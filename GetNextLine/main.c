@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:25:36 by caafonso          #+#    #+#             */
-/*   Updated: 2025/02/03 18:47:52 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:19:28 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 int	main(void)
 {
-	while ()
+	int	 fd;
+
+	fd = open("test.txt");
+	while (fd)
 	{
-		ft_printf("%s", get_next_line(1));
+		get_next_line(fd);
 		
 	}
 	return (0);
