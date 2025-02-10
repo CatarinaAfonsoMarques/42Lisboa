@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:46:36 by caafonso          #+#    #+#             */
-/*   Updated: 2025/02/05 16:10:44 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:55:49 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,33 @@ since the last call whereas read() didn’t reach the end of file; binary file
 
 char *get_next_line(int fd)
 {
-	char *buff;
+	static char	*left_c;
+	char	*buff;
+	char	*line;
 
-	
-	if (!fd)
-		return ("NULL");
-	buff = malloc( + 1);
-	buff = read(fd, ); // int fildes, void *buff, size_t nbyte
+	buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0 || !buff) //verificações
+	{
+		//cenas
+		free(buff);
+		return (NULL);
+	}
+	line = fill_line_buffer(fd, left_c, buff);
+	free(buff);
+	if (line)
+		return (line);
+	return (NULL);
+}
+
+
+/*
+	buff = read(fd, buff, BUFF_SIZE); // int fildes, void *buff, size_t nbyte
 	if (success)
 	{
 		while (len - 1)
 		{
 			buff[i] = '\n'; // nao na ultima
 		}
-
 		return (buff);
 	}
-	free(buff);
-	return (NULL);
-}
+*/
