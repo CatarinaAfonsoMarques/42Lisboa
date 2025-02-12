@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:46:36 by caafonso          #+#    #+#             */
-/*   Updated: 2025/02/10 19:19:50 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/02/12 19:26:16 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,26 @@ return line and free stuff from memory
 
 char *get_next_line(int fd)
 {
-	static char	*left_c;
-	char	*buff;
+	static char	buffer[BUFFER_SIZE + 1];
 	char	*line;
+	
 
-	buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0 || !buff) //verificações
-	{
-		//cenas
-		free(buff);
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	read(fd, buffer, BUFFER_SIZE);
+	while (!is_new_line(buffer))
+	{
+		read(fd, buffer, BUFFER_SIZE);
+		line = _buffering(fd, buffer);
 	}
-	line = fill_line_buffer(fd, left_c, buff);
-	free(buff);
+
+
 	if (!line)
 		return (NULL);
 	return (line);
 }
 
-char *line_stuff(int fd, char *buff, char *line)
+char *_buffering(int fd, char *buff)
 {
 	int	i,
 
