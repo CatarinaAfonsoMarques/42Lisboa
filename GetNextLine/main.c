@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	int	 fd;
+	int	fd;
 
 	fd = open("test.txt");
 	while (fd)
