@@ -42,8 +42,8 @@ char *get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	read(fd, buffer, BUFFER_SIZE);
-	while (!is_new_line(buffer))
+
+	while (buffer && !is_new_line(buffer)) // enquanto buffer tiver espaco le ou 
 	{
 		read(fd, buffer, BUFFER_SIZE);
 		line = _buffering(fd, buffer);
@@ -53,18 +53,6 @@ char *get_next_line(int fd)
 	if (!line)
 		return (NULL);
 	return (line);
-}
-
-char *_buffering(int fd, char *buff)
-{
-	int	i,
-
-	i = 0;
-	while (i != '\0' && i != '\n')
-	{
-		
-		i++;
-	}
 }
 
 /*

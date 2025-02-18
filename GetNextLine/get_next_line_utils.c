@@ -45,12 +45,11 @@ char	*_ft_strjoin(char *str1, char *str2)
 	j = 0;
 	while (str2[j])
 	{
-		result[i] = str2[j];
-		i++;
+		result[i + j] = str2[j];
 		j++;
 	}
 	result[i] = '\0';
-	return (result)
+	return (result);
 }
 
 int	_find_new_line(char *buffer)
@@ -67,4 +66,15 @@ int	_find_new_line(char *buffer)
 		i++;
 	}
 	return (0);
+}
+char *_clean_buffer(int fd, char *buff)
+{
+	int	i,
+
+	i = 0;
+	while (i != '\0' && i != '\n')
+	{
+		
+		i++;
+	}
 }
