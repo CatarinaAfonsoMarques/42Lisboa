@@ -34,22 +34,86 @@ line = reading the line
 return line and free stuff from memory
 */
 
+int	lineLen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str && str[i]!='\n' && str[i]!='\0')
+		i++;
+	if(str && str[i] == '\n')
+		i++;
+	return (i);
+}
+
+char *func(char *line, char *buffer)
+{
+	char	*out;
+	int	i;
+	int	j;
+
+	out = malloc(lineLen(line) + lineLen(buffer) + 1);
+	if (!out)
+		return NULL;
+	out[lineLen(line) + lineLen(buffer)] = 0;
+	i = 0;
+	while (line && line[i])
+	{
+		out[i] = line[i];
+		i++;
+	}
+	j = 0;
+	while (buffer[j] != '\n' && buffer[j] != '\0')
+	{
+		out[i + j] = buffer[j];
+		j++;
+	}
+	if (buffer[j] == '\n')
+		out[i + j] = '\n';
+	if (line)
+		free(line);
+	return (out);
+}
+
+void clean(char *buffer)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (buffer[i] && buffer[i] != '\n')
+		buffer[i++] = 0;
+	if (buffer[i] == '\n')
+		buffer [i++] = 0;
+	while (buffer[i + j])
+	{
+		buffer[j] = buffer[i + j];
+		buffer[i + j] = '\0';
+		j++;
+	}
+}
+
 char *get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE + 1];
 	char	*line;
-	
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-
-	while (buffer && !is_new_line(buffer)) // enquanto buffer tiver espaco le ou 
+	line = NULL;
+	while (1)
 	{
-		read(fd, buffer, BUFFER_SIZE);
-		line = _buffering(fd, buffer);
+		if (buffer[0] == '\0')
+		{
+			if (!read(fd, buffer, BUFFER_SIZE))
+				return NULL;
+		}
+		line = func(line, buffer);
+		clean(buffer);
+		if (line[lineLen(line) - 1] == '\n' || line[lineLen(line) - 1])
+			break;
 	}
-
-
 	if (!line)
 		return (NULL);
 	return (line);
