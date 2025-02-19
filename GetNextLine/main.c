@@ -14,14 +14,15 @@
 
 int	main(void)
 {
-	int	fd;
-	char *str;
+	int		fd;
+	char	*str;
+
 	fd = open("test.txt", O_RDONLY);
 	while (1)
 	{
 		str = get_next_line(fd);
 		if (!str)
-			break;
+			break ;
 		printf("%s", str);
 		free(str);
 	}

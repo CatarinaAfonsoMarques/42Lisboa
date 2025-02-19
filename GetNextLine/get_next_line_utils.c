@@ -12,69 +12,62 @@
 
 #include "get_next_line.h"
 
-int	_ft_strlen(char *str)
+int	_line_len(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str && str[i] != '\n' && str[i] != '\0')
+		i++;
+	if (str && str[i] == '\n')
 		i++;
 	return (i);
 }
 
-char	*_ft_strjoin(char *str1, char *str2)
+char	*_ft_strjoin(char *line, char *buffer)
 {
-	int	i;
-	int	j;
-	char	*result;
+	char	*out;
+	int		i;
+	int		j;
 
-	if (!str1)
-	{
-		str1 = malloc(1 * sizeof(char));
-		str1[0] = '\0';
-	}
-	result = malloc((_ft_strlen(str1) + _ft_strlen(str2) + 1) * sizeof(char));
-	if (!result)
-		return (0);
+	out = malloc(_line_len(line) + _line_len(buffer) + 1);
+	if (!out)
+		return (NULL);
+	out[_line_len(line) + _line_len(buffer)] = 0;
 	i = 0;
-	while (str1[i])
+	while (line && line[i])
 	{
-		result[i] = str1[i];
+		out[i] = line[i];
 		i++;
 	}
 	j = 0;
-	while (str2[j])
+	while (buffer[j] != '\n' && buffer[j] != '\0')
 	{
-		result[i + j] = str2[j];
+		out[i + j] = buffer[j];
 		j++;
 	}
-	result[i] = '\0';
-	return (result);
+	if (buffer[j] == '\n')
+		out[i + j] = '\n';
+	if (line)
+		free(line);
+	return (out);
 }
 
-int	_find_new_line(char *buffer)
+void	_clean_buffer(char *buffer)
 {
 	int	i;
-
-	if (!buffer)
-		return (0);
-	i = 0;
-	while (buffer[i])
-	{
-		if (buffer[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
-char *_clean_buffer(int fd, char *buff)
-{
-	int	i,
+	int	j;
 
 	i = 0;
-	while (i != '\0' && i != '\n')
+	j = 0;
+	while (buffer[i] && buffer[i] != '\n')
+		buffer[i++] = 0;
+	if (buffer[i] == '\n')
+		buffer [i++] = 0;
+	while (buffer[i + j])
 	{
-		
-		i++;
+		buffer[j] = buffer[i + j];
+		buffer[i + j] = '\0';
+		j++;
 	}
 }

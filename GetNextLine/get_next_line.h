@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -19,10 +19,13 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 42
 # endif
 
 //PROTOTIPAGENS
 char	*get_next_line(int fd);
+int		_line_len(char *str);
+char	*_ft_strjoin(char *line, char *buffer);
+void	_clean_buffer(char *buffer);
 
 #endif
