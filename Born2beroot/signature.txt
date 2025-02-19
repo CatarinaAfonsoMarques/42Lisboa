@@ -1,0 +1,3 @@
+~/VirtualBox VMs/
+
+".vdi" file, signature in sha1 format.
