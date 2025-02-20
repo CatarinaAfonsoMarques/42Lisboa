@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 18:25:36 by caafonso          #+#    #+#             */
-/*   Updated: 2025/02/10 14:19:28 by caafonso         ###   ########.fr       */
+/*   Created: 2025/01/31 20:08:23 by caafonso          #+#    #+#             */
+/*   Updated: 2025/02/10 17:45:34 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-int	main(void)
-{
-	int		fd;
-	char	*str;
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-	fd = open("test.txt", O_RDONLY);
-	while (1)
-	{
-		str = get_next_line(fd);
-		if (!str)
-			break ;
-		printf("line = %s", str);
-		free(str);
-	}
-	while (1)
-	{
-		if (i == 3)
-		
-	}
-	return (0);
-}
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+//PROTOTIPAGENS
+char	*get_next_line(int fd);
+int		_line_len(char *str);
+char	*_ft_strjoin(char *line, char *buffer);
+void	_clean_buffer(char *buffer);
+char	*ft_str_nl(char *str);
+
+#endif
