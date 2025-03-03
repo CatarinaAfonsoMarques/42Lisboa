@@ -12,22 +12,10 @@
 
 #include "get_next_line.h"
 
-/* learn variadic functions: only lives during when the program is running. 
+/* variadic functions: only lives during when the program is running.
 allocates memory during compile, before program is executed (!= dinamic alloc)
 only kinds of variables whose location is known by the compiler at compile time
 stored in data segment of the programs address space (sections of object files)
-
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=42
-
-undefined behavior: if the file pointed to by the file descriptor changed
-since the last call whereas read() didn’t reach the end of file; binary file
-
-verifications: memory allocation, fd is a valid file, buffer size and
-there's something to read
-
-line = reading the line
-
-return line and free stuff from memory
 */
 
 char	*get_next_line(int fd)
@@ -49,7 +37,7 @@ char	*get_next_line(int fd)
 		line = _ft_strjoin(line, buffer);
 		_clean_buffer(buffer);
 		if (_str_nl(line))
-			return (line);
+			break ;
 	}
 	if (rd < 0 && !_str_nl(line))
 		return (free(line), NULL);

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 /*
 #include "get_next_line.h"
+
 int	main(void)
 {
 	int		fd;
@@ -24,11 +25,6 @@ int	main(void)
 			break ;
 		printf("line = %s", str);
 		free(str);
-	}
-	while (1)
-	{
-		if (i == 3)
-		
 	}
 	return (0);
 }*/
