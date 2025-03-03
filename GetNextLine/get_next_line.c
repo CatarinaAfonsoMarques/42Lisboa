@@ -34,22 +34,25 @@ char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE + 1];
 	char		*line;
+	int			rd;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = NULL;
-	while (1)
+	rd = 1;
+	while (buffer[0] || rd > 0)
 	{
-		if (buffer[0] == '\0')
-		{
-			if (!read(fd, buffer, BUFFER_SIZE))
-				return (NULL);
-		}
+		if (!buffer[0])
+			rd = read(fd, buffer, BUFFER_SIZE);
+		if (rd <= 0)
+			break ;
 		line = _ft_strjoin(line, buffer);
 		_clean_buffer(buffer);
-		if (line[_line_len(line) - 1] == '\n' || line[_line_len(line) - 1])
-			break ;
+		if (_str_nl(line))
+			return (line);
 	}
+	if (rd < 0 && !_str_nl(line))
+		return (free(line), NULL);
 	if (!line)
 		return (NULL);
 	return (line);

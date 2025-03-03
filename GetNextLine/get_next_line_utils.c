@@ -71,3 +71,19 @@ void	_clean_buffer(char *buffer)
 		j++;
 	}
 }
+
+char	*_str_nl(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str == 0)
+		return (0);
+	while (str[i] != 0)
+	{
+		if (str[i] == '\n')
+			return (&str[i]);
+		i++;
+	}
+	return (0);
+}

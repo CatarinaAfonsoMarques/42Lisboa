@@ -27,5 +27,6 @@ char	*get_next_line(int fd);
 int		_line_len(char *str);
 char	*_ft_strjoin(char *line, char *buffer);
 void	_clean_buffer(char *buffer);
+char	*_str_nl(char *str);
 
 #endif
