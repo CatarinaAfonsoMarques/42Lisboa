@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# ARCH
+# ARCH			could be -rm 
 arch=$(uname -a)
 
 # CPU PHYSICAL
-cpuf=$(grep "physical id" /proc/cpuinfo | wc -l)
+cpuf=$(grep "physical id" /proc/cpuinfo | sort -u | wc -l)
 
 # CPU VIRTUAL
-cpuv=$(grep "processor" /proc/cpuinfo | wc -l)
+cpuv=$(grep "processor" /proc/cpuinfo | sort -u | wc -l)
 
 # RAM
 ram_total=$(free --mega | awk '$1 == "Mem:" {print $2}')
@@ -20,25 +20,27 @@ disk_use=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {pri
 disk_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t+= $2} END {printf("%d"), disk_u/disk_t*100}')
 
 # CPU LOAD
-cpul=$(vmstat 1 2 | tail -1 | awk '{printf $15}')
+cpul=$(vmstat 1 2 | tail -1 | awk '{printf $15}') #execute vmstat twice 
 cpu_op=$(expr 100 - $cpul)
 cpu_fin=$(printf "%.1f" $cpu_op)
 
 # LAST BOOT
-lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
+#lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
+lb=$(uptime -s)
 
 # LVM USE
-lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
+#lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
+lvm=$(lsblk | grep -q "lvm" && echo "yes" || echo "no")
 
 # TCP CONNEXIONS
 tcpc=$(ss -ta | grep ESTAB | wc -l)
 
 # USER LOG
-ulog=$(users | wc -w)
+ulog=$(users | sort -u | wc -w)
 
 # NETWORK
-ip=$(hostname -I)
-mac=$(ip link | grep "link/ether" | awk '{print $2}')
+ip=$(hostname -I | awk '{print $1}')
+mac=$(ip link | grep "link/ether" | awk '{print "("$2")"}')
 
 # SUDO
 cmnd=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
