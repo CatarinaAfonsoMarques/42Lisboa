@@ -6,7 +6,7 @@
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:40:38 by caafonso          #+#    #+#             */
-/*   Updated: 2025/04/22 18:39:30 by caafonso         ###   ########.fr       */
+/*   Updated: 2025/04/22 19:29:32 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,22 @@ int main(sinal binario, mensagem)
 	
 	while (1)
 		pause();
-	if (0)
+	while ( != '\0')
 	{
 		ft_printf("signal recieved \n");
-		decoded = 
-		ft_printf("%s", decoded);
+		sigaction();
+		while (i <= 8)
+			//receber char bit a bit
+			//reconstruir char
+			//guardar para printar tudo 
+			i++;
+		if (8 bits)
+		{
+			// add char to be written
+			kill(client_pid, SIGUSR1; // mandar para client
+		}
 	}
-	kill();
+
+	ft_printf("%s", decoded);
 	return (0);
 }
