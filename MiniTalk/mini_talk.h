@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   mini_talk.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caafonso <caafonso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 15:40:31 by caafonso          #+#    #+#             */
-/*   Updated: 2025/04/22 10:54:26 by caafonso         ###   ########.fr       */
+/*   Created: 2025/04/22 10:20:25 by caafonso          #+#    #+#             */
+/*   Updated: 2025/04/22 10:21:16 by caafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mini_talk.h>
-// sends encoded message to server SIGUSR1 SIGUSR2
+#ifndef MINI_TALK_H
+# define MINI_TALK_H
 
-int	main(int argc, char **argv)
-{
-	if (argc > 0)
-	{
-		
-	}
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <libft.h>
+#include <signal.h>
+
+
+
+#endif
