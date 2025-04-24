@@ -11,17 +11,50 @@
 /* ************************************************************************** */
 
 #include <mini_talk.h>
-// sends encoded message to server SIGUSR1 SIGUSR2
+
+int client_pid;
+client_pid = getpid();
+
+int	_to_bits(char c)
+{
+	int	i;
+	int	bits[8];
+
+	i = 0;
+	while (i < 8)
+	{
+		bits[i] = (c >> i) & 1;
+		i++;
+	}
+	return (bits);
+}
+
+void send_char(char c, int pid)
+{
+	int	i;
+
+	i = 0;
+	while (i < 8)
+	{
+		if ((c >> i) & 1)
+			kill(pid, SIGUSR1);
+		else
+			kill(pid, SIGUSR2);
+		pause();
+		i++;
+	}
+}
 
 int	main(int argc, char **argv)
 {
+	int	i;
+
 	if (argc > 0)
 	{
-		// convert char to bits
-		while (bits)
-			kill(server_id, SIGUSR1) || kill(server_id, SIGUSR2); // send each bit 0 or 1 to server
-			pause(); // wait response from server before sending next bit
+		i = 0;
+		while (i < argc)
+			send_char(argv[1], server_pid);
+			kill(server_pid, \0); // end of message send /0
 			i++;
-		kill(server_pid, \0); // end of message send /0
 	}
 }

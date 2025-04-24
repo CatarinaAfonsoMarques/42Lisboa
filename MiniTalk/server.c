@@ -18,8 +18,27 @@ void	_ft_sighandle()
 	
 }
 
+int server_pid;
+server_pid = getpid();
+
+char	_to_char(int bits[8])
+{
+	int	i;
+	int	c;
+	
+	i = 0;
+	c = 0;
+	while (i < 8)
+	{
+		c |= (bits[i] << i);
+		i++;
+	}
+	return (c);
+}
+
 int main(sinal binario, mensagem)
 {
+	
 	char	decoded[];
 	
 	if (not error)
